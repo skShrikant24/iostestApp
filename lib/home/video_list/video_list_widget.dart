@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_youtube_player.dart';
-import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -99,24 +98,14 @@ class _VideoListWidgetState extends State<VideoListWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                if (false)
-                  FlutterFlowYoutubePlayer(
-                    url: FFAppState().videoUrl,
-                    autoPlay: false,
-                    looping: true,
-                    mute: false,
-                    showControls: true,
-                    showFullScreen: true,
-                    strictRelatedVideos: false,
-                  ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 250.0,
-                  child: custom_widgets.YouTubePlayerWidget(
-                    width: double.infinity,
-                    height: 250.0,
-                    videoUrl: functions.vidurl(FFAppState().videoUrl),
-                  ),
+                FlutterFlowYoutubePlayer(
+                  url: FFAppState().videoUrl,
+                  autoPlay: false,
+                  looping: true,
+                  mute: false,
+                  showControls: true,
+                  showFullScreen: true,
+                  strictRelatedVideos: true,
                 ),
                 Flexible(
                   child: Container(
