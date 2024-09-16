@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "171697159316",
+    "project_id": "disha-elearning",
+    "storage_bucket": "disha-elearning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171697159316:android:abb9f2ea491505e5f1c881",
+        "android_client_info": {
+          "package_name": "com.disha.elearning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA45yPd-TpveOUcCD06eXkG9-QymkQaU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
