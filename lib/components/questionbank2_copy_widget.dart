@@ -104,13 +104,7 @@ class _Questionbank2CopyWidgetState extends State<Questionbank2CopyWidget> {
                               enlargeFactor: 0.45,
                               enableInfiniteScroll: true,
                               scrollDirection: Axis.horizontal,
-                              autoPlay: true,
-                              autoPlayAnimationDuration:
-                                  const Duration(milliseconds: 600),
-                              autoPlayInterval:
-                                  const Duration(milliseconds: (600 + 5000)),
-                              autoPlayCurve: Curves.linear,
-                              pauseAutoPlayInFiniteScroll: true,
+                              autoPlay: false,
                               onPageChanged: (index, _) =>
                                   _model.carouselCurrentIndex = index,
                             ),
