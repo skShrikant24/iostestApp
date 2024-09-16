@@ -102,7 +102,7 @@ class _Questionbank2CopyWidgetState extends State<Questionbank2CopyWidget> {
                               disableCenter: true,
                               enlargeCenterPage: true,
                               enlargeFactor: 0.45,
-                              enableInfiniteScroll: true,
+                              enableInfiniteScroll: false,
                               scrollDirection: Axis.horizontal,
                               autoPlay: false,
                               onPageChanged: (index, _) =>
