@@ -12,8 +12,12 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter/services.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:flutter/services.dart';
 
 class YouTubePlayerWidget extends StatefulWidget {
   const YouTubePlayerWidget({
@@ -34,6 +38,8 @@ class YouTubePlayerWidget extends StatefulWidget {
 class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
   late YoutubePlayerController _controller;
   late String videoId;
+  bool _isFullScreen = false;
+
   @override
   void initState() {
     super.initState();
@@ -46,6 +52,18 @@ class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
         showLiveFullscreenButton: true,
       ),
     );
+
+    _controller.addListener(_listener);
+  }
+
+  void _listener() {
+    if (_controller.value.isFullScreen && !_isFullScreen) {
+      _navigateToFullScreenPlayer(context);
+    } else if (!_controller.value.isFullScreen && _isFullScreen) {
+      setState(() {
+        _isFullScreen = false;
+      });
+    }
   }
 
   @override
@@ -60,11 +78,7 @@ class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
                 showVideoProgressIndicator: true,
                 progressIndicatorColor: Colors.red,
                 onReady: () {
-                  _controller.addListener(() {
-                    if (_controller.value.isFullScreen) {
-                      _navigateToFullScreenPlayer(context);
-                    }
-                  });
+                  // Ready to play
                 },
               ),
               builder: (context, player) {
@@ -72,7 +86,7 @@ class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
               },
             )
           : Center(
-              child: Text(
+              child: const Text(
                 'Invalid video URL',
                 style: TextStyle(color: Colors.red),
               ),
@@ -80,9 +94,13 @@ class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
     );
   }
 
-  void _navigateToFullScreenPlayer(BuildContext context) {
-    Navigator.of(context)
-        .push(
+  void _navigateToFullScreenPlayer(BuildContext context) async {
+    setState(() {
+      _isFullScreen = true;
+    });
+
+    // Navigate to the fullscreen player
+    await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => Scaffold(
           backgroundColor: Colors.black,
@@ -93,14 +111,18 @@ class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
           ),
         ),
       ),
-    )
-        .then((_) {
-      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    );
+
+    // When returning from fullscreen, reset UI mode
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    setState(() {
+      _isFullScreen = false;
     });
   }
 
   @override
   void dispose() {
+    _controller.removeListener(_listener);
     _controller.dispose();
     super.dispose();
   }

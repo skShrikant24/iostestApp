@@ -531,19 +531,21 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   letterSpacing: 0.0,
                                 ),
                           ),
-                          Text(
-                            valueOrDefault<String>(
-                              widget.option4,
-                              '0',
+                          Flexible(
+                            child: Text(
+                              valueOrDefault<String>(
+                                widget.option4,
+                                '0',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.0,
-                                ),
                           ),
                         ].divide(const SizedBox(width: 10.0)),
                       ),
