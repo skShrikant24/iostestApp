@@ -85,4 +85,10 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInListQuestion(int index, QuestionStruct value) {
     listQuestion.insert(index, value);
   }
+
+  String _mobileno = '';
+  String get mobileno => _mobileno;
+  set mobileno(String value) {
+    _mobileno = value;
+  }
 }

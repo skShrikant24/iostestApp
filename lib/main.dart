@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-
-import 'auth/custom_auth/auth_util.dart';
-import 'auth/custom_auth/custom_auth_user_provider.dart';
+import 'auth/firebase_auth/firebase_user_provider.dart';
+import 'auth/firebase_auth/auth_util.dart';
 
 import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -15,11 +14,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
+
   await initFirebase();
 
   await FlutterFlowTheme.initialize();
-
-  await authManager.initialize();
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
@@ -47,7 +45,9 @@ class _MyAppState extends State<MyApp> {
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
 
-  late Stream<TestApplicationAuthUser> userStream;
+  late Stream<BaseAuthUser> userStream;
+
+  final authUserSub = authenticatedUserStream.listen((_) {});
 
   @override
   void initState() {
@@ -55,15 +55,22 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = testApplicationAuthUserStream()
+    userStream = testApplicationFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
-
+    jwtTokenStream.listen((_) {});
     Future.delayed(
       const Duration(milliseconds: 1000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
+  }
+
+  @override
+  void dispose() {
+    authUserSub.cancel();
+
+    super.dispose();
   }
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {

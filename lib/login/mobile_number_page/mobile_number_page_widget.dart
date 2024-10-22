@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -6,6 +7,7 @@ import 'mobile_number_page_model.dart';
 export 'mobile_number_page_model.dart';
 
 class MobileNumberPageWidget extends StatefulWidget {
+  /// Mobile NO authantication
   const MobileNumberPageWidget({super.key});
 
   @override
@@ -24,6 +26,8 @@ class _MobileNumberPageWidgetState extends State<MobileNumberPageWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
+    authManager.handlePhoneAuthStateChanges(context);
   }
 
   @override
@@ -106,6 +110,7 @@ class _MobileNumberPageWidgetState extends State<MobileNumberPageWidget> {
                           fontFamily: 'Readex Pro',
                           letterSpacing: 0.0,
                         ),
+                    textAlign: TextAlign.center,
                     keyboardType: TextInputType.phone,
                     validator:
                         _model.textControllerValidator.asValidator(context),
@@ -115,7 +120,28 @@ class _MobileNumberPageWidgetState extends State<MobileNumberPageWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed('OTPActivity');
+                      final phoneNumberVal = _model.textController.text;
+                      if (phoneNumberVal.isEmpty ||
+                          !phoneNumberVal.startsWith('+')) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                                'Phone Number is required and has to start with +.'),
+                          ),
+                        );
+                        return;
+                      }
+                      await authManager.beginPhoneAuth(
+                        context: context,
+                        phoneNumber: phoneNumberVal,
+                        onCodeSent: (context) async {
+                          context.goNamedAuth(
+                            'OTPActivity',
+                            context.mounted,
+                            ignoreRedirect: true,
+                          );
+                        },
+                      );
                     },
                     text: 'Continue',
                     options: FFButtonOptions(
@@ -141,6 +167,7 @@ class _MobileNumberPageWidgetState extends State<MobileNumberPageWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Already have an account? ',

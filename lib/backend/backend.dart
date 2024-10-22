@@ -1,11 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../auth/firebase_auth/auth_util.dart';
 
+import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
 import 'schema/course_record.dart';
 import 'schema/course_video_record.dart';
 import 'schema/course_practice_test_record.dart';
 import 'schema/advance_course_record.dart';
+import 'schema/user_pofile_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -18,6 +22,7 @@ export 'schema/course_record.dart';
 export 'schema/course_video_record.dart';
 export 'schema/course_practice_test_record.dart';
 export 'schema/advance_course_record.dart';
+export 'schema/user_pofile_record.dart';
 
 /// Functions to query CourseRecords (as a Stream and as a Future).
 Future<int> queryCourseRecordCount({
@@ -167,6 +172,43 @@ Future<List<AdvanceCourseRecord>> queryAdvanceCourseRecordOnce({
       singleRecord: singleRecord,
     );
 
+/// Functions to query UserPofileRecords (as a Stream and as a Future).
+Future<int> queryUserPofileRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      UserPofileRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<UserPofileRecord>> queryUserPofileRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      UserPofileRecord.collection,
+      UserPofileRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<UserPofileRecord>> queryUserPofileRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      UserPofileRecord.collection,
+      UserPofileRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
 Future<int> queryCollectionCount(
   Query collection, {
   Query Function(Query)? queryBuilder,
@@ -300,4 +342,35 @@ Future<FFFirestorePage<T>> queryCollectionPage<T>(
   final dataStream = docSnapshotStream?.map(getDocs);
   final nextPageToken = docSnapshot.docs.isEmpty ? null : docSnapshot.docs.last;
   return FFFirestorePage(data, dataStream, nextPageToken);
+}
+
+// Creates a Firestore document representing the logged in user if it doesn't yet exist
+Future maybeCreateUser(User user) async {
+  final userRecord = UserPofileRecord.collection.doc(user.uid);
+  final userExists = await userRecord.get().then((u) => u.exists);
+  if (userExists) {
+    currentUserDocument = await UserPofileRecord.getDocumentOnce(userRecord);
+    return;
+  }
+
+  final userData = createUserPofileRecordData(
+    email: user.email ??
+        FirebaseAuth.instance.currentUser?.email ??
+        user.providerData.firstOrNull?.email,
+    displayName:
+        user.displayName ?? FirebaseAuth.instance.currentUser?.displayName,
+    photoUrl: user.photoURL,
+    uid: user.uid,
+    phoneNumber: user.phoneNumber,
+    createdTime: getCurrentTimestamp,
+  );
+
+  await userRecord.set(userData);
+  currentUserDocument =
+      UserPofileRecord.getDocumentFromData(userData, userRecord);
+}
+
+Future updateUserDocument({String? email}) async {
+  await currentUserDocument?.reference
+      .update(createUserPofileRecordData(email: email));
 }

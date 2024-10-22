@@ -21,3 +21,4 @@ export '/advance_courses_list/advance_courses_list_widget.dart'
 export '/home/practice_test/practice_test_widget.dart' show PracticeTestWidget;
 export '/home/abouts/abouts_widget.dart' show AboutsWidget;
 export '/feedback_page/feedback_page_widget.dart' show FeedbackPageWidget;
+export '/login/create_user/create_user_widget.dart' show CreateUserWidget;

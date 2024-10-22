@@ -115,8 +115,7 @@ class _AdvanceCoursesListWidgetState extends State<AdvanceCoursesListWidget> {
                                 width: double.infinity,
                                 height: 100.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color: const Color(0xFFE9CECE),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(

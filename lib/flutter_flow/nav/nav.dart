@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
-import '/auth/custom_auth/custom_auth_user_provider.dart';
+import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -22,8 +22,8 @@ class AppStateNotifier extends ChangeNotifier {
   static AppStateNotifier? _instance;
   static AppStateNotifier get instance => _instance ??= AppStateNotifier._();
 
-  TestApplicationAuthUser? initialUser;
-  TestApplicationAuthUser? user;
+  BaseAuthUser? initialUser;
+  BaseAuthUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -48,7 +48,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(TestApplicationAuthUser newUser) {
+  void update(BaseAuthUser newUser) {
     final shouldUpdate =
         user?.uid == null || newUser.uid == null || user?.uid != newUser.uid;
     initialUser ??= newUser;
@@ -74,13 +74,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const SplashScreenWidget(),
+          appStateNotifier.loggedIn ? const LoginPageWidget() : const SplashScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomePageWidget()
+              ? const LoginPageWidget()
               : const SplashScreenWidget(),
         ),
         FFRoute(
@@ -198,6 +198,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'FeedbackPage',
           path: '/feedbackPage',
           builder: (context, params) => const FeedbackPageWidget(),
+        ),
+        FFRoute(
+          name: 'CreateUser',
+          path: '/createUser',
+          builder: (context, params) => const CreateUserWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

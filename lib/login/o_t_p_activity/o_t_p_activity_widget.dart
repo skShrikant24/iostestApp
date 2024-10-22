@@ -1,7 +1,11 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'o_t_p_activity_model.dart';
 export 'o_t_p_activity_model.dart';
 
@@ -24,6 +28,8 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
+    authManager.handlePhoneAuthStateChanges(context);
   }
 
   @override
@@ -35,6 +41,8 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -44,7 +52,8 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
@@ -111,8 +120,40 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    GoRouter.of(context).prepareAuthEvent();
+                    final smsCodeVal = _model.textController.text;
+                    if (smsCodeVal.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Enter SMS verification code.'),
+                        ),
+                      );
+                      return;
+                    }
+                    final phoneVerifiedUser = await authManager.verifySmsCode(
+                      context: context,
+                      smsCode: smsCodeVal,
+                    );
+                    if (phoneVerifiedUser == null) {
+                      return;
+                    }
+
+                    _model.user = await queryUserPofileRecordOnce(
+                      queryBuilder: (userPofileRecord) =>
+                          userPofileRecord.where(
+                        'phone_number',
+                        isEqualTo: FFAppState().mobileno,
+                      ),
+                      singleRecord: true,
+                    ).then((s) => s.firstOrNull);
+                    if (_model.user != null) {
+                      context.pushNamedAuth('HomePage', context.mounted);
+                    } else {
+                      context.pushNamedAuth('CreateUser', context.mounted);
+                    }
+
+                    safeSetState(() {});
                   },
                   text: 'Verify',
                   options: FFButtonOptions(
@@ -136,8 +177,29 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    final phoneNumberVal = FFAppState().mobileno;
+                    if (phoneNumberVal.isEmpty ||
+                        !phoneNumberVal.startsWith('+')) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                              'Phone Number is required and has to start with +.'),
+                        ),
+                      );
+                      return;
+                    }
+                    await authManager.beginPhoneAuth(
+                      context: context,
+                      phoneNumber: phoneNumberVal,
+                      onCodeSent: (context) async {
+                        context.goNamedAuth(
+                          'OTPActivity',
+                          context.mounted,
+                          ignoreRedirect: true,
+                        );
+                      },
+                    );
                   },
                   text: 'Resend OTP',
                   options: FFButtonOptions(

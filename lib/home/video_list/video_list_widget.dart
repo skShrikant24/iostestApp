@@ -103,7 +103,7 @@ class _VideoListWidgetState extends State<VideoListWidget> {
                   autoPlay: false,
                   looping: true,
                   mute: false,
-                  showControls: true,
+                  showControls: false,
                   showFullScreen: true,
                   strictRelatedVideos: true,
                 ),
