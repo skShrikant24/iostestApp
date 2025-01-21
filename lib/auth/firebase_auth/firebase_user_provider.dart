@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart';
 
 import '../base_auth_user_provider.dart';
 
@@ -30,6 +32,11 @@ class TestApplicationFirebaseUser extends BaseAuthUser {
     } catch (_) {
       await user?.verifyBeforeUpdateEmail(email);
     }
+  }
+
+  @override
+  Future? updatePassword(String newPassword) async {
+    await user?.updatePassword(newPassword);
   }
 
   @override
@@ -67,6 +74,9 @@ Stream<BaseAuthUser> testApplicationFirebaseUserStream() =>
         .map<BaseAuthUser>(
       (user) {
         currentUser = TestApplicationFirebaseUser(user);
+        if (!kIsWeb) {
+          FirebaseCrashlytics.instance.setUserIdentifier(user?.uid ?? '');
+        }
         return currentUser!;
       },
     );

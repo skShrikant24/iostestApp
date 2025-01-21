@@ -31,6 +31,8 @@ class _ListQuestionWidgetState extends State<ListQuestionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ListQuestionModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -22,6 +22,8 @@ class _AdvanceCoursesListWidgetState extends State<AdvanceCoursesListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AdvanceCoursesListModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -34,7 +36,10 @@ class _AdvanceCoursesListWidgetState extends State<AdvanceCoursesListWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

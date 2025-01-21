@@ -44,6 +44,8 @@ class _VideoListWidgetState extends State<VideoListWidget> {
       _model.listpage = _model.list!.toList().cast<CourseVideoRecord>();
       safeSetState(() {});
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -59,7 +61,10 @@ class _VideoListWidgetState extends State<VideoListWidget> {
 
     return YoutubeFullScreenWrapper(
       child: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
+        onTap: () {
+          FocusScope.of(context).unfocus();
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

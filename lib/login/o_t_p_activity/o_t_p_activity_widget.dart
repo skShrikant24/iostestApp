@@ -30,6 +30,7 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
     _model.textFieldFocusNode ??= FocusNode();
 
     authManager.handlePhoneAuthStateChanges(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -44,7 +45,10 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -143,7 +147,7 @@ class _OTPActivityWidgetState extends State<OTPActivityWidget> {
                       queryBuilder: (userPofileRecord) =>
                           userPofileRecord.where(
                         'phone_number',
-                        isEqualTo: FFAppState().mobileno,
+                        isEqualTo: '+91${FFAppState().mobileno}',
                       ),
                       singleRecord: true,
                     ).then((s) => s.firstOrNull);

@@ -29,6 +29,8 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CourseDetailsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -72,7 +74,10 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget> {
                 : null;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             appBar: AppBar(

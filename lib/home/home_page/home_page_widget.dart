@@ -31,6 +31,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -43,7 +45,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         drawer: Drawer(
@@ -155,24 +160,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               CrossAxisAlignment
                                                                   .center,
                                                           children: [
-                                                            FlutterFlowIconButton(
-                                                              borderColor: Colors
-                                                                  .transparent,
+                                                            ClipRRect(
                                                               borderRadius:
-                                                                  20.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 40.0,
-                                                              icon: Icon(
-                                                                Icons.home,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                size: 30.0,
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/new_nav_home.png',
+                                                                width: 30.0,
+                                                                height: 30.0,
+                                                                fit: BoxFit
+                                                                    .cover,
                                                               ),
-                                                              onPressed: () {
-                                                                print(
-                                                                    'IconButton pressed ...');
-                                                              },
                                                             ),
                                                             Text(
                                                               'Home',
@@ -280,23 +280,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             CrossAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          FlutterFlowIconButton(
-                                                            borderColor: Colors
-                                                                .transparent,
-                                                            borderRadius: 20.0,
-                                                            borderWidth: 1.0,
-                                                            buttonSize: 40.0,
-                                                            icon: Icon(
-                                                              Icons.next_plan,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                              size: 30.0,
+                                                          ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                            child: Image.asset(
+                                                              'assets/images/question_bank.png',
+                                                              width: 30.0,
+                                                              height: 30.0,
+                                                              fit: BoxFit.cover,
                                                             ),
-                                                            onPressed: () {
-                                                              print(
-                                                                  'IconButton pressed ...');
-                                                            },
                                                           ),
                                                           Text(
                                                             'Question Bank',
@@ -423,6 +417,125 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         ),
                                                         Text(
                                                           'Help/FAQ',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
+                                                        ),
+                                                      ].divide(const SizedBox(
+                                                          width: 10.0)),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.79, -0.3),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 10.0,
+                                                                0.0, 0.0),
+                                                    child:
+                                                        FlutterFlowIconButton(
+                                                      borderColor:
+                                                          Colors.transparent,
+                                                      borderRadius: 20.0,
+                                                      borderWidth: 1.0,
+                                                      buttonSize: 40.0,
+                                                      icon: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_right_sharp,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 24.0,
+                                                      ),
+                                                      onPressed: () {
+                                                        print(
+                                                            'IconButton pressed ...');
+                                                      },
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const Divider(
+                                            height: 2.0,
+                                            thickness: 0.0,
+                                            color: Color(0xCCD4C2C2),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
+                                            ),
+                                            child: Stack(
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          5.0, 10.0, 0.0, 10.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context
+                                                          .pushNamed('loader');
+                                                    },
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        FlutterFlowIconButton(
+                                                          borderColor: Colors
+                                                              .transparent,
+                                                          borderRadius: 20.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 40.0,
+                                                          icon: Icon(
+                                                            Icons.apps_sharp,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            size: 30.0,
+                                                          ),
+                                                          onPressed: () {
+                                                            print(
+                                                                'IconButton pressed ...');
+                                                          },
+                                                        ),
+                                                        Text(
+                                                          'Professional Login',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleLarge

@@ -46,6 +46,8 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NewQuestionModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -128,7 +130,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                           .listQuestion
                           .where((e) => e.question == widget.question)
                           .toList()
-                          .first);
+                          .firstOrNull!);
                       FFAppState().update(() {});
 
                       context.pushNamed(
@@ -140,8 +142,8 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   .listQuestion
                                   .where((e) => e.question == widget.question)
                                   .toList()
-                                  .first
-                                  .cname,
+                                  .firstOrNull
+                                  ?.cname,
                               '0',
                             ),
                             ParamType.String,
@@ -225,7 +227,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                           .listQuestion
                           .where((e) => e.question == widget.question)
                           .toList()
-                          .first);
+                          .firstOrNull!);
                       FFAppState().update(() {});
                       await showDialog(
                         context: context,
@@ -254,8 +256,8 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   .listQuestion
                                   .where((e) => e.question == widget.question)
                                   .toList()
-                                  .first
-                                  .cname,
+                                  .firstOrNull
+                                  ?.cname,
                               '0',
                             ),
                             ParamType.String,
@@ -339,7 +341,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                           .listQuestion
                           .where((e) => e.question == widget.question)
                           .toList()
-                          .first);
+                          .firstOrNull!);
                       FFAppState().update(() {});
                       await showDialog(
                         context: context,
@@ -368,8 +370,8 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   .listQuestion
                                   .where((e) => e.question == widget.question)
                                   .toList()
-                                  .first
-                                  .cname,
+                                  .firstOrNull
+                                  ?.cname,
                               '0',
                             ),
                             ParamType.String,
@@ -470,7 +472,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                           .listQuestion
                           .where((e) => e.question == widget.question)
                           .toList()
-                          .first);
+                          .firstOrNull!);
                       FFAppState().update(() {});
 
                       context.pushNamed(
@@ -481,8 +483,8 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                 .listQuestion
                                 .where((e) => e.question == widget.question)
                                 .toList()
-                                .first
-                                .cname,
+                                .firstOrNull
+                                ?.cname,
                             ParamType.String,
                           ),
                         }.withoutNulls,

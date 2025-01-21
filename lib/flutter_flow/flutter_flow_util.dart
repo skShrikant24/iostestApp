@@ -15,6 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../main.dart';
 
 
+export 'keep_alive_wrapper.dart';
 export 'lat_lng.dart';
 export 'place.dart';
 export 'uploaded_file.dart';
@@ -29,7 +30,7 @@ export 'package:cloud_firestore/cloud_firestore.dart'
 export 'package:page_transition/page_transition.dart';
 export 'nav/nav.dart';
 
-final RouteObserver<ModalRoute> routeObserver = RouteObserver<PageRoute>();
+final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
 
 T valueOrDefault<T>(T? value, T defaultValue) =>
     (value is String && value.isEmpty) || value == null ? defaultValue : value;

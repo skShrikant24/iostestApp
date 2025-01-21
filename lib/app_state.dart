@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -15,12 +16,28 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _mobileno = prefs.getString('ff_mobileno') ?? _mobileno;
+    });
+    _safeInit(() {
+      _dId = prefs.getString('ff_dId') ?? _dId;
+    });
+    _safeInit(() {
+      _eapcode = prefs.getString('ff_eapcode') ?? _eapcode;
+    });
+    _safeInit(() {
+      _password = prefs.getString('ff_password') ?? _password;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   List<String> _productimage = [];
   List<String> get productimage => _productimage;
@@ -90,5 +107,74 @@ class FFAppState extends ChangeNotifier {
   String get mobileno => _mobileno;
   set mobileno(String value) {
     _mobileno = value;
+    prefs.setString('ff_mobileno', value);
   }
+
+  String _dId = '';
+  String get dId => _dId;
+  set dId(String value) {
+    _dId = value;
+    prefs.setString('ff_dId', value);
+  }
+
+  String _eapcode = '';
+  String get eapcode => _eapcode;
+  set eapcode(String value) {
+    _eapcode = value;
+    prefs.setString('ff_eapcode', value);
+  }
+
+  String _password = '';
+  String get password => _password;
+  set password(String value) {
+    _password = value;
+    prefs.setString('ff_password', value);
+  }
+
+  List<dynamic> _mocktestlist = [];
+  List<dynamic> get mocktestlist => _mocktestlist;
+  set mocktestlist(List<dynamic> value) {
+    _mocktestlist = value;
+  }
+
+  void addToMocktestlist(dynamic value) {
+    mocktestlist.add(value);
+  }
+
+  void removeFromMocktestlist(dynamic value) {
+    mocktestlist.remove(value);
+  }
+
+  void removeAtIndexFromMocktestlist(int index) {
+    mocktestlist.removeAt(index);
+  }
+
+  void updateMocktestlistAtIndex(
+    int index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    mocktestlist[index] = updateFn(_mocktestlist[index]);
+  }
+
+  void insertAtIndexInMocktestlist(int index, dynamic value) {
+    mocktestlist.insert(index, value);
+  }
+
+  int _obtainmarks = 0;
+  int get obtainmarks => _obtainmarks;
+  set obtainmarks(int value) {
+    _obtainmarks = value;
+  }
+}
+
+void _safeInit(Function() initializeField) {
+  try {
+    initializeField();
+  } catch (_) {}
+}
+
+Future _safeInitAsync(Function() initializeField) async {
+  try {
+    await initializeField();
+  } catch (_) {}
 }

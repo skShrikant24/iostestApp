@@ -21,6 +21,8 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PrivacyPolicyModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -33,7 +35,10 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

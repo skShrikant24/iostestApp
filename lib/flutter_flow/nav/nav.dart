@@ -16,6 +16,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -73,14 +75,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const LoginPageWidget() : const SplashScreenWidget(),
+          appStateNotifier.loggedIn ? const HomePageWidget() : const SplashScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const LoginPageWidget()
+              ? const HomePageWidget()
               : const SplashScreenWidget(),
         ),
         FFRoute(
@@ -203,6 +206,101 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateUser',
           path: '/createUser',
           builder: (context, params) => const CreateUserWidget(),
+        ),
+        FFRoute(
+          name: 'ProfessionLogin',
+          path: '/professionLogin',
+          builder: (context, params) => const ProfessionLoginWidget(),
+        ),
+        FFRoute(
+          name: 'PLHomepage',
+          path: '/pLHomepage',
+          builder: (context, params) => PLHomepageWidget(
+            epcode: params.getParam(
+              'epcode',
+              ParamType.String,
+            ),
+            cname: params.getParam(
+              'cname',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'PCourseDetails',
+          path: '/pCourseDetails',
+          builder: (context, params) => PCourseDetailsWidget(
+            name: params.getParam(
+              'name',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'loader',
+          path: '/loader',
+          builder: (context, params) => const LoaderWidget(),
+        ),
+        FFRoute(
+          name: 'CourseDetailprofessional',
+          path: '/courseDetailprofessional',
+          builder: (context, params) => CourseDetailprofessionalWidget(
+            cname: params.getParam(
+              'cname',
+              ParamType.String,
+            ),
+            imageName: params.getParam(
+              'imageName',
+              ParamType.String,
+            ),
+            timeline: params.getParam(
+              'timeline',
+              ParamType.String,
+            ),
+            cDet: params.getParam(
+              'cDet',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'VideoListProfessional',
+          path: '/videoListProfessional',
+          builder: (context, params) => VideoListProfessionalWidget(
+            courseName: params.getParam(
+              'courseName',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'PracticeTestprofessional',
+          path: '/practiceTestprofessional',
+          builder: (context, params) => PracticeTestprofessionalWidget(
+            cname: params.getParam(
+              'cname',
+              ParamType.String,
+            ),
+            imagename: params.getParam(
+              'imagename',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'mockTest',
+          path: '/mockTest',
+          builder: (context, params) => MockTestWidget(
+            courseName: params.getParam(
+              'courseName',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'ResultPage',
+          path: '/resultPage',
+          builder: (context, params) => const ResultPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

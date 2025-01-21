@@ -33,6 +33,8 @@ class _Questionbank2WidgetState extends State<Questionbank2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Questionbank2Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

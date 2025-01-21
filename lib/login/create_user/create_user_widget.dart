@@ -33,7 +33,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
     _model.textFieldNameFocusNode ??= FocusNode();
 
     _model.textFieldMobileTextController ??=
-        TextEditingController(text: FFAppState().mobileno);
+        TextEditingController(text: '+91${FFAppState().mobileno}');
     _model.textFieldMobileFocusNode ??= FocusNode();
 
     _model.textFieldEmailTextController ??= TextEditingController();
@@ -41,6 +41,8 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
 
     _model.addresssTextController ??= TextEditingController();
     _model.addresssFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -354,8 +356,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                               const Duration(milliseconds: 2000),
                                               () => safeSetState(() {}),
                                             ),
-                                            autofocus: true,
-                                            readOnly: true,
+                                            autofocus: false,
                                             obscureText: false,
                                             decoration: const InputDecoration(
                                               enabledBorder: OutlineInputBorder(
@@ -412,6 +413,9 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                                 .titleMedium
                                                 .override(
                                                   fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
                                                   letterSpacing: 0.0,
                                                 ),
                                             keyboardType: const TextInputType

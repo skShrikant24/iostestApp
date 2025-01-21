@@ -29,6 +29,8 @@ class _PracticeTestWidgetState extends State<PracticeTestWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PracticeTestModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -71,7 +73,10 @@ class _PracticeTestWidgetState extends State<PracticeTestWidget> {
             : null;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             appBar: AppBar(

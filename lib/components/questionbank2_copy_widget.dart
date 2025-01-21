@@ -35,6 +35,8 @@ class _Questionbank2CopyWidgetState extends State<Questionbank2CopyWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Questionbank2CopyModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -95,7 +97,7 @@ class _Questionbank2CopyWidgetState extends State<Questionbank2CopyWidget> {
                               );
                             },
                             carouselController: _model.carouselController ??=
-                                CarouselController(),
+                                CarouselSliderController(),
                             options: CarouselOptions(
                               initialPage: max(0, min(1, list.length - 1)),
                               viewportFraction: 0.9,

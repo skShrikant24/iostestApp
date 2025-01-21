@@ -22,3 +22,19 @@ export '/home/practice_test/practice_test_widget.dart' show PracticeTestWidget;
 export '/home/abouts/abouts_widget.dart' show AboutsWidget;
 export '/feedback_page/feedback_page_widget.dart' show FeedbackPageWidget;
 export '/login/create_user/create_user_widget.dart' show CreateUserWidget;
+export '/professional/profession_login/profession_login_widget.dart'
+    show ProfessionLoginWidget;
+export '/professional/p_l_homepage/p_l_homepage_widget.dart'
+    show PLHomepageWidget;
+export '/professional/p_course_details/p_course_details_widget.dart'
+    show PCourseDetailsWidget;
+export '/professional/loader/loader_widget.dart' show LoaderWidget;
+export '/professional/course_detailprofessional/course_detailprofessional_widget.dart'
+    show CourseDetailprofessionalWidget;
+export '/professional/video_list_professional/video_list_professional_widget.dart'
+    show VideoListProfessionalWidget;
+export '/professional/practice_testprofessional/practice_testprofessional_widget.dart'
+    show PracticeTestprofessionalWidget;
+export '/professional/mock_test/mock_test_widget.dart' show MockTestWidget;
+export '/professional/result_page/result_page_widget.dart'
+    show ResultPageWidget;

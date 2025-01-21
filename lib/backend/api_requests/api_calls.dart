@@ -53,6 +53,148 @@ class GetVersionCall {
   }
 }
 
+class LoginCheckprofessionalCall {
+  static Future<ApiCallResponse> call({
+    String? imei = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'loginCheckprofessional',
+      apiUrl: 'https://dishagroup.in/service.asmx/CheckProfessionalRiphone',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'IMEI': imei,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class LoginEapCall {
+  static Future<ApiCallResponse> call({
+    String? eApp = '',
+    String? password = '',
+    String? imei = '',
+    String? mobile = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'LoginEap',
+      apiUrl: 'https://dishagroup.in/service.asmx/ValidateEAppRiphone',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'eApp': eApp,
+        'Password': password,
+        'IMEI': imei,
+        'Mobile': mobile,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetcourselistCall {
+  static Future<ApiCallResponse> call({
+    String? imei = '',
+    String? cNAme = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getcourselist',
+      apiUrl: 'https://dishagroup.in/service.asmx/GetExamQuesDetIphone',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'Imei': imei,
+        'CNAme': cNAme,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetCnameforPlCall {
+  static Future<ApiCallResponse> call({
+    String? imei = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getCnameforPl',
+      apiUrl: 'https://dishagroup.in/service.asmx/getCourseNameiphone',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'IMEI': imei,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetsubscribedlistCall {
+  static Future<ApiCallResponse> call({
+    String? imei = '',
+    String? cNAme = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getsubscribedlist',
+      apiUrl: 'https://dishagroup.in/service.asmx/GetCourseDetailsiphone',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'Imei': imei,
+        'CNAme': cNAme,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetMocktestquestionCall {
+  static Future<ApiCallResponse> call({
+    String? subject = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getMocktestquestion',
+      apiUrl: 'https://dishagroup.in/service.asmx/GetQuestioniphone',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'Subject': subject,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

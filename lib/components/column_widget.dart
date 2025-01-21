@@ -53,6 +53,8 @@ class _ColumnWidgetState extends State<ColumnWidget> {
         singleRecord: true,
       ).then((s) => s.firstOrNull);
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
