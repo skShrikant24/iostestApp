@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'mobile_number_page_model.dart';
 export 'mobile_number_page_model.dart';
 
+/// Mobile NO authantication
 class MobileNumberPageWidget extends StatefulWidget {
-  /// Mobile NO authantication
   const MobileNumberPageWidget({super.key});
 
   @override
