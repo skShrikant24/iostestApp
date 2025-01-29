@@ -20,7 +20,16 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171697159316-tsultr65755oknjg19u1p0mhph086vab.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.disha.elearning",
+                "app_store_id": "6624303931"
+              }
+            }
+          ]
         }
       }
     }
