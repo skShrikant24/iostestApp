@@ -999,7 +999,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           .clearRedirectLocation();
 
                                                       context.goNamedAuth(
-                                                          'LoginPage',
+                                                          'SplashScreen',
                                                           context.mounted);
                                                     },
                                                     child: Row(
