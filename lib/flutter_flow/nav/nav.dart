@@ -77,14 +77,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const SplashScreenWidget(),
+          appStateNotifier.loggedIn ? const HomePageWidget() : const LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomePageWidget()
-              : const SplashScreenWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const HomePageWidget() : const LoginPageWidget(),
         ),
         FFRoute(
           name: 'SplashScreen',
@@ -474,7 +473,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/splashScreen';
+            return '/loginPage';
           }
           return null;
         },
