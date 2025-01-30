@@ -50,6 +50,11 @@ class UserPofileRecord extends FirestoreRecord {
   String get address => _address ?? '';
   bool hasAddress() => _address != null;
 
+  // "password" field.
+  String? _password;
+  String get password => _password ?? '';
+  bool hasPassword() => _password != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -58,6 +63,7 @@ class UserPofileRecord extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _address = snapshotData['address'] as String?;
+    _password = snapshotData['password'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -102,6 +108,7 @@ Map<String, dynamic> createUserPofileRecordData({
   DateTime? createdTime,
   String? phoneNumber,
   String? address,
+  String? password,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -112,6 +119,7 @@ Map<String, dynamic> createUserPofileRecordData({
       'created_time': createdTime,
       'phone_number': phoneNumber,
       'address': address,
+      'password': password,
     }.withoutNulls,
   );
 
@@ -129,7 +137,8 @@ class UserPofileRecordDocumentEquality implements Equality<UserPofileRecord> {
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.address == e2?.address;
+        e1?.address == e2?.address &&
+        e1?.password == e2?.password;
   }
 
   @override
@@ -140,7 +149,8 @@ class UserPofileRecordDocumentEquality implements Equality<UserPofileRecord> {
         e?.uid,
         e?.createdTime,
         e?.phoneNumber,
-        e?.address
+        e?.address,
+        e?.password
       ]);
 
   @override

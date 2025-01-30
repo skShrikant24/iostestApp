@@ -301,6 +301,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ResultPage',
           path: '/resultPage',
           builder: (context, params) => const ResultPageWidget(),
+        ),
+        FFRoute(
+          name: 'AuthEmail',
+          path: '/authEmail',
+          builder: (context, params) => const AuthEmailWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

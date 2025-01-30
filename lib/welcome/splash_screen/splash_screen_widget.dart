@@ -26,7 +26,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(const Duration(milliseconds: 2000));
 
-      context.pushNamed('MobileNumberPage');
+      context.pushNamed('AuthEmail');
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
