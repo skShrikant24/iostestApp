@@ -1101,7 +1101,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.01),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 2.0, 0.0, 0.0),
@@ -1121,7 +1121,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
@@ -1143,67 +1143,51 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 5.0, 0.0, 0.0),
-                                                  child: Container(
-                                                    width: 60.0,
-                                                    height: 60.0,
-                                                    clipBehavior:
-                                                        Clip.antiAlias,
-                                                    decoration: const BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    child: Image.network(
-                                                      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8cHJvZmlsZSUyMGljb258ZW58MHx8fHwxNzI0OTM4MjgzfDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                                      fit: BoxFit.cover,
+                                                  child: AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        Container(
+                                                      width: 60.0,
+                                                      height: 60.0,
+                                                      clipBehavior:
+                                                          Clip.antiAlias,
+                                                      decoration: const BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      child: Image.network(
+                                                        valueOrDefault<String>(
+                                                          currentUserPhoto,
+                                                          'https://images.unsplash.com/photo-1511367461989-f85a21fda167?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8cHJvZmlsZSUyMGljb258ZW58MHx8fHwxNzI0OTM4MjgzfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                        ),
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
-                                              Text(
-                                                'Guest',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyLarge
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      fontSize: 20.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
+                                              AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  currentUserDisplayName,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        fontSize: 20.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                                ),
                                               ),
                                             ].divide(const SizedBox(height: 10.0)),
                                           ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
-                                          child: FlutterFlowIconButton(
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .accent1,
-                                            borderRadius: 20.0,
-                                            borderWidth: 1.0,
-                                            buttonSize: 40.0,
-                                            icon: Icon(
-                                              Icons.arrow_back_ios,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              size: 20.0,
-                                            ),
-                                            onPressed: () async {
-                                              context.safePop();
-                                            },
-                                          ),
-                                        ),
-                                      ]
-                                          .divide(const SizedBox(width: 5.0))
-                                          .addToStart(const SizedBox(width: 5.0)),
+                                      ],
                                     ),
                                   ),
                                   const Divider(

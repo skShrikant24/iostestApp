@@ -4,9 +4,11 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'auth_email_model.dart';
 export 'auth_email_model.dart';
 
@@ -129,6 +131,8 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -617,19 +621,36 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               .doc(user.uid)
                                                               .update(
                                                                   createUserPofileRecordData(
-                                                                email: _model
-                                                                    .emailAddressCreateTextController
-                                                                    .text,
-                                                                createdTime:
-                                                                    getCurrentTimestamp,
-                                                                password: _model
-                                                                    .passwordCreateTextController
-                                                                    .text,
+                                                                email: '',
                                                               ));
 
-                                                          context.goNamedAuth(
-                                                              'HomePage',
-                                                              context.mounted);
+                                                          _model.user =
+                                                              await queryUserPofileRecordOnce(
+                                                            queryBuilder:
+                                                                (userPofileRecord) =>
+                                                                    userPofileRecord
+                                                                        .where(
+                                                              'phone_number',
+                                                              isEqualTo:
+                                                                  '+91${FFAppState().mobileno}',
+                                                            ),
+                                                            singleRecord: true,
+                                                          ).then((s) => s
+                                                                  .firstOrNull);
+                                                          if (_model.user !=
+                                                              null) {
+                                                            context.pushNamedAuth(
+                                                                'HomePage',
+                                                                context
+                                                                    .mounted);
+                                                          } else {
+                                                            context.pushNamedAuth(
+                                                                'CreateUser',
+                                                                context
+                                                                    .mounted);
+                                                          }
+
+                                                          safeSetState(() {});
                                                         },
                                                         text: 'Get Started',
                                                         options:
@@ -1300,9 +1321,34 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             return;
                                                           }
 
-                                                          context.goNamedAuth(
-                                                              'HomePage',
-                                                              context.mounted);
+                                                          _model.usercreate =
+                                                              await queryUserPofileRecordOnce(
+                                                            queryBuilder:
+                                                                (userPofileRecord) =>
+                                                                    userPofileRecord
+                                                                        .where(
+                                                              'phone_number',
+                                                              isEqualTo:
+                                                                  '+91${FFAppState().mobileno}',
+                                                            ),
+                                                            singleRecord: true,
+                                                          ).then((s) => s
+                                                                  .firstOrNull);
+                                                          if (_model
+                                                                  .usercreate !=
+                                                              null) {
+                                                            context.pushNamedAuth(
+                                                                'HomePage',
+                                                                context
+                                                                    .mounted);
+                                                          } else {
+                                                            context.pushNamedAuth(
+                                                                'CreateUser',
+                                                                context
+                                                                    .mounted);
+                                                          }
+
+                                                          safeSetState(() {});
                                                         },
                                                         text: 'Sign In',
                                                         options:

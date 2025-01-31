@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'create_user_model.dart';
@@ -28,6 +29,19 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CreateUserModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      safeSetState(() {
+        _model.textFieldNameTextController?.text = currentUserDisplayName;
+      });
+      safeSetState(() {
+        _model.textFieldEmailTextController?.text = currentUserEmail;
+      });
+      safeSetState(() {
+        _model.textFieldMobileTextController?.text = currentPhoneNumber;
+      });
+    });
 
     _model.textFieldNameTextController ??= TextEditingController();
     _model.textFieldNameFocusNode ??= FocusNode();
@@ -711,6 +725,13 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                                 address: _model
                                                     .addresssTextController
                                                     .text,
+                                                photoUrl: currentUserPhoto,
+                                                createdTime: currentUserDocument
+                                                    ?.createdTime,
+                                                password: valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.password,
+                                                    ''),
                                               ));
                                               await showDialog(
                                                 context: context,

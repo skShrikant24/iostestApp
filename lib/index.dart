@@ -38,4 +38,4 @@ export '/professional/practice_testprofessional/practice_testprofessional_widget
 export '/professional/mock_test/mock_test_widget.dart' show MockTestWidget;
 export '/professional/result_page/result_page_widget.dart'
     show ResultPageWidget;
-export '/auth_email/auth_email_widget.dart' show AuthEmailWidget;
+export '/welcome/auth_email/auth_email_widget.dart' show AuthEmailWidget;
