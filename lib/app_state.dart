@@ -30,6 +30,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _password = prefs.getString('ff_password') ?? _password;
     });
+    _safeInit(() {
+      _email = prefs.getString('ff_email') ?? _email;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -164,6 +167,13 @@ class FFAppState extends ChangeNotifier {
   int get obtainmarks => _obtainmarks;
   set obtainmarks(int value) {
     _obtainmarks = value;
+  }
+
+  String _email = '';
+  String get email => _email;
+  set email(String value) {
+    _email = value;
+    prefs.setString('ff_email', value);
   }
 }
 

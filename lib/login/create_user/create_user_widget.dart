@@ -32,25 +32,34 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      safeSetState(() {
-        _model.textFieldNameTextController?.text = currentUserDisplayName;
-      });
-      safeSetState(() {
-        _model.textFieldEmailTextController?.text = currentUserEmail;
-      });
-      safeSetState(() {
-        _model.textFieldMobileTextController?.text = currentPhoneNumber;
-      });
+      if (currentUserEmail != '') {
+        FFAppState().email = currentUserEmail;
+        safeSetState(() {});
+        safeSetState(() {
+          _model.textFieldEmailTextController?.text = FFAppState().email;
+        });
+        safeSetState(() {
+          _model.textFieldNameTextController?.text = currentUserDisplayName;
+        });
+        safeSetState(() {
+          _model.textFieldMobileTextController?.text = currentPhoneNumber;
+        });
+      } else {
+        safeSetState(() {
+          _model.textFieldEmailTextController?.text = FFAppState().email;
+        });
+      }
     });
 
     _model.textFieldNameTextController ??= TextEditingController();
     _model.textFieldNameFocusNode ??= FocusNode();
 
     _model.textFieldMobileTextController ??=
-        TextEditingController(text: '+91${FFAppState().mobileno}');
+        TextEditingController(text: FFAppState().mobileno);
     _model.textFieldMobileFocusNode ??= FocusNode();
 
-    _model.textFieldEmailTextController ??= TextEditingController();
+    _model.textFieldEmailTextController ??=
+        TextEditingController(text: FFAppState().email);
     _model.textFieldEmailFocusNode ??= FocusNode();
 
     _model.addresssTextController ??= TextEditingController();
@@ -364,12 +373,6 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                                 .textFieldMobileTextController,
                                             focusNode:
                                                 _model.textFieldMobileFocusNode,
-                                            onChanged: (_) =>
-                                                EasyDebounce.debounce(
-                                              '_model.textFieldMobileTextController',
-                                              const Duration(milliseconds: 2000),
-                                              () => safeSetState(() {}),
-                                            ),
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: const InputDecoration(
@@ -432,9 +435,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                                       .primaryText,
                                                   letterSpacing: 0.0,
                                                 ),
-                                            keyboardType: const TextInputType
-                                                .numberWithOptions(
-                                                signed: true, decimal: true),
+                                            keyboardType: TextInputType.number,
                                             validator: _model
                                                 .textFieldMobileTextControllerValidator
                                                 .asValidator(context),
@@ -700,6 +701,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                         ),
                                         child: FFButtonWidget(
                                           onPressed: () async {
+                                            var shouldSetState = false;
                                             if (_model.textFieldNameTextController
                                                         .text !=
                                                     '') {
@@ -710,29 +712,61 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                                 return;
                                               }
 
-                                              await currentUserReference!.update(
-                                                  createUserPofileRecordData(
+                                              var userPofileRecordReference =
+                                                  UserPofileRecord.collection
+                                                      .doc();
+                                              await userPofileRecordReference
+                                                  .set(
+                                                      createUserPofileRecordData(
                                                 email: _model
                                                     .textFieldEmailTextController
                                                     .text,
                                                 displayName: _model
                                                     .textFieldNameTextController
                                                     .text,
-                                                phoneNumber: _model
-                                                    .textFieldMobileTextController
-                                                    .text,
+                                                photoUrl:
+                                                    valueOrDefault<String>(
+                                                  currentUserPhoto,
+                                                  'https://images.unsplash.com/photo-1511367461989-f85a21fda167?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8cHJvZmlsZSUyMGljb258ZW58MHx8fHwxNzI0OTM4MjgzfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                ),
                                                 uid: currentUserUid,
+                                                createdTime:
+                                                    getCurrentTimestamp,
+                                                phoneNumber:
+                                                    '+91${_model.textFieldMobileTextController.text}',
                                                 address: _model
                                                     .addresssTextController
                                                     .text,
-                                                photoUrl: currentUserPhoto,
-                                                createdTime: currentUserDocument
-                                                    ?.createdTime,
-                                                password: valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.password,
-                                                    ''),
+                                                password: FFAppState().password,
                                               ));
+                                              _model.createuser = UserPofileRecord
+                                                  .getDocumentFromData(
+                                                      createUserPofileRecordData(
+                                                        email: _model
+                                                            .textFieldEmailTextController
+                                                            .text,
+                                                        displayName: _model
+                                                            .textFieldNameTextController
+                                                            .text,
+                                                        photoUrl:
+                                                            valueOrDefault<
+                                                                String>(
+                                                          currentUserPhoto,
+                                                          'https://images.unsplash.com/photo-1511367461989-f85a21fda167?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8cHJvZmlsZSUyMGljb258ZW58MHx8fHwxNzI0OTM4MjgzfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                        ),
+                                                        uid: currentUserUid,
+                                                        createdTime:
+                                                            getCurrentTimestamp,
+                                                        phoneNumber:
+                                                            '+91${_model.textFieldMobileTextController.text}',
+                                                        address: _model
+                                                            .addresssTextController
+                                                            .text,
+                                                        password: FFAppState()
+                                                            .password,
+                                                      ),
+                                                      userPofileRecordReference);
+                                              shouldSetState = true;
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
@@ -796,7 +830,14 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                                                   );
                                                 },
                                               );
+                                              if (shouldSetState) {
+                                                safeSetState(() {});
+                                              }
                                               return;
+                                            }
+
+                                            if (shouldSetState) {
+                                              safeSetState(() {});
                                             }
                                           },
                                           text: 'Submit',

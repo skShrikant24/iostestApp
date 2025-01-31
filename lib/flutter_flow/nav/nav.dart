@@ -76,14 +76,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const SplashScreenWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const SplashScreen2Widget()
+          : const SplashScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomePageWidget()
+              ? const SplashScreen2Widget()
               : const SplashScreenWidget(),
         ),
         FFRoute(
@@ -306,6 +307,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AuthEmail',
           path: '/authEmail',
           builder: (context, params) => const AuthEmailWidget(),
+        ),
+        FFRoute(
+          name: 'SplashScreen2',
+          path: '/splashScreen2',
+          builder: (context, params) => const SplashScreen2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

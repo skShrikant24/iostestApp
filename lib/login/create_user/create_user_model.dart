@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'create_user_widget.dart' show CreateUserWidget;
 import 'package:flutter/material.dart';
@@ -30,11 +31,11 @@ class CreateUserModel extends FlutterFlowModel<CreateUserWidget> {
       return 'Field is required';
     }
 
-    if (val.length < 13) {
-      return 'Requires at least 13 characters.';
+    if (val.length < 10) {
+      return 'Requires at least 10 characters.';
     }
-    if (val.length > 13) {
-      return 'Maximum 13 characters allowed, currently ${val.length}.';
+    if (val.length > 10) {
+      return 'Maximum 10 characters allowed, currently ${val.length}.';
     }
     if (!RegExp('[0-9]').hasMatch(val)) {
       return 'Invalid text';
@@ -61,6 +62,9 @@ class CreateUserModel extends FlutterFlowModel<CreateUserWidget> {
     }
     return null;
   }
+
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  UserPofileRecord? createuser;
 
   @override
   void initState(BuildContext context) {

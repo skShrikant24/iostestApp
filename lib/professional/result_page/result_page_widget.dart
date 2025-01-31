@@ -102,19 +102,16 @@ class _ResultPageWidgetState extends State<ResultPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            AuthUserStreamWidget(
-                              builder: (context) => Text(
-                                currentUserDisplayName,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color:
-                                          FlutterFlowTheme.of(context).success,
-                                      fontSize: 30.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
+                            Text(
+                              currentUserDisplayName,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: FlutterFlowTheme.of(context).success,
+                                    fontSize: 30.0,
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ],
                         ),
