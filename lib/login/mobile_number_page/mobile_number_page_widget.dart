@@ -137,6 +137,8 @@ class _MobileNumberPageWidgetState extends State<MobileNumberPageWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      FFAppState().mobileno = _model.textController.text;
+                      safeSetState(() {});
                       final phoneNumberVal = '+91${_model.textController.text}';
                       if (phoneNumberVal.isEmpty ||
                           !phoneNumberVal.startsWith('+')) {
@@ -159,9 +161,6 @@ class _MobileNumberPageWidgetState extends State<MobileNumberPageWidget> {
                           );
                         },
                       );
-
-                      FFAppState().mobileno = _model.textController.text;
-                      safeSetState(() {});
                     },
                     text: 'Continue',
                     options: FFButtonOptions(

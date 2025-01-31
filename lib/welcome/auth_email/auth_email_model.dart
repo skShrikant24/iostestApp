@@ -24,6 +24,8 @@ class AuthEmailModel extends FlutterFlowModel<AuthEmailWidget> {
       passwordCreateTextControllerValidator;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   UserPofileRecord? user;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  UserPofileRecord? usergoogle;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
@@ -35,6 +37,8 @@ class AuthEmailModel extends FlutterFlowModel<AuthEmailWidget> {
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   UserPofileRecord? usercreate;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  UserPofileRecord? usergogle2;
 
   @override
   void initState(BuildContext context) {
