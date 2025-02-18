@@ -45,7 +45,7 @@ class _ListQuestionWidgetState extends State<ListQuestionWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: StreamBuilder<List<CoursePracticeTestRecord>>(
         stream: queryCoursePracticeTestRecord(
           queryBuilder: (coursePracticeTestRecord) =>

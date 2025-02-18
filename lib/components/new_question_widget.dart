@@ -18,7 +18,7 @@ class NewQuestionWidget extends StatefulWidget {
     this.option4,
     this.coursname,
     String? index,
-  }) : index = index ?? '0';
+  }) : this.index = index ?? '0';
 
   final String? question;
   final String? option1;
@@ -68,7 +68,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -78,16 +78,16 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                 '${widget.coursname}  Questions',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
-                      color: const Color(0xFF22B522),
+                      color: Color(0xFF22B522),
                       letterSpacing: 0.0,
                     ),
               ),
               Flexible(
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Text(
                       '${widget.index} ) ${valueOrDefault<String>(
                         widget.question,
@@ -114,12 +114,12 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Answer Is Correct !'),
+                              content: Text('Answer Is Correct !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -133,35 +133,19 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                           .firstOrNull!);
                       FFAppState().update(() {});
 
-                      context.pushNamed(
-                        'QuestionBankList',
-                        queryParameters: {
-                          'courseName': serializeParam(
-                            valueOrDefault<String>(
-                              FFAppState()
-                                  .listQuestion
-                                  .where((e) => e.question == widget.question)
-                                  .toList()
-                                  .firstOrNull
-                                  ?.cname,
-                              '0',
-                            ),
-                            ParamType.String,
-                          ),
-                        }.withoutNulls,
-                      );
+                      _model.updatePage(() {});
                     } else {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Wrong Answer !'),
+                              content: Text('Wrong Answer !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -178,7 +162,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -209,7 +193,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
@@ -234,12 +218,12 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Answer Is Correct !'),
+                              content: Text('Answer Is Correct !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -247,35 +231,19 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                         },
                       );
 
-                      context.pushNamed(
-                        'QuestionBankList',
-                        queryParameters: {
-                          'courseName': serializeParam(
-                            valueOrDefault<String>(
-                              FFAppState()
-                                  .listQuestion
-                                  .where((e) => e.question == widget.question)
-                                  .toList()
-                                  .firstOrNull
-                                  ?.cname,
-                              '0',
-                            ),
-                            ParamType.String,
-                          ),
-                        }.withoutNulls,
-                      );
+                      _model.updatePage(() {});
                     } else {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Wrong Answer !'),
+                              content: Text('Wrong Answer !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -292,7 +260,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -323,7 +291,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
@@ -348,12 +316,12 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Answer Is Correct !'),
+                              content: Text('Answer Is Correct !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -361,35 +329,19 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                         },
                       );
 
-                      context.pushNamed(
-                        'QuestionBankList',
-                        queryParameters: {
-                          'courseName': serializeParam(
-                            valueOrDefault<String>(
-                              FFAppState()
-                                  .listQuestion
-                                  .where((e) => e.question == widget.question)
-                                  .toList()
-                                  .firstOrNull
-                                  ?.cname,
-                              '0',
-                            ),
-                            ParamType.String,
-                          ),
-                        }.withoutNulls,
-                      );
+                      _model.updatePage(() {});
                     } else {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Wrong Answer !'),
+                              content: Text('Wrong Answer !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -406,7 +358,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -437,7 +389,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
@@ -456,12 +408,12 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Answer Is Correct !'),
+                              content: Text('Answer Is Correct !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -475,32 +427,19 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                           .firstOrNull!);
                       FFAppState().update(() {});
 
-                      context.pushNamed(
-                        'QuestionBankList',
-                        queryParameters: {
-                          'courseName': serializeParam(
-                            FFAppState()
-                                .listQuestion
-                                .where((e) => e.question == widget.question)
-                                .toList()
-                                .firstOrNull
-                                ?.cname,
-                            ParamType.String,
-                          ),
-                        }.withoutNulls,
-                      );
+                      _model.updatePage(() {});
                     } else {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: const Text('Wrong Answer !'),
+                              content: Text('Wrong Answer !'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             ),
@@ -518,7 +457,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -549,13 +488,13 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 20.0)),
+            ].divide(SizedBox(height: 20.0)),
           ),
         ),
       ),

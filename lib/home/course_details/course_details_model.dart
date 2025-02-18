@@ -8,6 +8,8 @@ class CourseDetailsModel extends FlutterFlowModel<CourseDetailsWidget> {
 
   // Stores action output result for [Firestore Query - Query a collection] action in Column widget.
   CourseVideoRecord? videolink;
+  // Stores action output result for [Firestore Query - Query a collection] action in Column widget.
+  CourseVideoRecord? videolink2;
 
   @override
   void initState(BuildContext context) {}

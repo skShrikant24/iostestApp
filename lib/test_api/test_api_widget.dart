@@ -69,7 +69,7 @@ class _TestApiWidgetState extends State<TestApiWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -90,7 +90,7 @@ class _TestApiWidgetState extends State<TestApiWidget> {
                     itemBuilder: (context, listIndex) {
                       final listItem = list[listIndex];
                       return Container(
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,

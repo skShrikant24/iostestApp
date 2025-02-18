@@ -67,7 +67,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
         minWidth: double.infinity,
         minHeight: double.infinity,
       ),
@@ -75,7 +75,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -84,7 +84,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                 'Questions',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
-                      color: const Color(0xFF22A526),
+                      color: Color(0xFF22A526),
                       letterSpacing: 0.0,
                     ),
               ),
@@ -92,14 +92,14 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                 'Questions',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
-                      color: const Color(0xFF22A526),
+                      color: Color(0xFF22A526),
                       letterSpacing: 0.0,
                     ),
               ),
               Container(
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Text(
                     valueOrDefault<String>(
                       widget.parameter1,
@@ -114,7 +114,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 8.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 8.0, 0.0),
                 child: Text(
                   'Options',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -125,7 +125,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: EdgeInsets.all(2.0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.0),
@@ -147,7 +147,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -160,12 +160,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Answer Is Correct !'),
+                                      content: Text('Answer Is Correct !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -178,12 +178,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Wrong Answer !'),
+                                      content: Text('Wrong Answer !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -204,12 +204,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 100.0)),
+                    ].divide(SizedBox(width: 100.0)),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: EdgeInsets.all(2.0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.0),
@@ -231,7 +231,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -244,12 +244,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Answer Is Correct !'),
+                                      content: Text('Answer Is Correct !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -262,12 +262,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Wrong Answer !'),
+                                      content: Text('Wrong Answer !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -288,12 +288,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 100.0)),
+                    ].divide(SizedBox(width: 100.0)),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: EdgeInsets.all(2.0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.0),
@@ -315,7 +315,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -328,12 +328,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Answer Is Correct !'),
+                                      content: Text('Answer Is Correct !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -346,12 +346,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Wrong Answer !'),
+                                      content: Text('Wrong Answer !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -372,12 +372,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 100.0)),
+                    ].divide(SizedBox(width: 100.0)),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: EdgeInsets.all(2.0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.0),
@@ -399,7 +399,7 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -412,12 +412,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Answer Is Correct !'),
+                                      content: Text('Answer Is Correct !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -430,12 +430,12 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                                 builder: (alertDialogContext) {
                                   return WebViewAware(
                                     child: AlertDialog(
-                                      content: const Text('Wrong Answer !'),
+                                      content: Text('Wrong Answer !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     ),
@@ -456,11 +456,11 @@ class _ColumnWidgetState extends State<ColumnWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 100.0)),
+                    ].divide(SizedBox(width: 100.0)),
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 5.0)),
+            ].divide(SizedBox(height: 5.0)),
           ),
         ),
       ),

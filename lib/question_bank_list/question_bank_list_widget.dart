@@ -102,7 +102,7 @@ class _QuestionBankListWidgetState extends State<QuestionBankListWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -111,7 +111,7 @@ class _QuestionBankListWidgetState extends State<QuestionBankListWidget> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: wrapWithModel(
               model: _model.questionbank2CopyModel,
               updateCallback: () => safeSetState(() {}),

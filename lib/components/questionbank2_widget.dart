@@ -62,7 +62,7 @@ class _Questionbank2WidgetState extends State<Questionbank2Widget> {
             return Container(
               width: 400.0,
               height: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
               ),
               child: NewQuestionWidget(

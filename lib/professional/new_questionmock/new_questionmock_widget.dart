@@ -17,7 +17,7 @@ class NewQuestionmockWidget extends StatefulWidget {
     this.option4,
     this.coursname,
     String? index,
-  }) : index = index ?? '0';
+  }) : this.index = index ?? '0';
 
   final String? question;
   final String? option1;
@@ -65,7 +65,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -75,21 +75,21 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                 '${widget.coursname}  Questions',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
-                      color: const Color(0xFF22B522),
+                      color: Color(0xFF22B522),
                       letterSpacing: 0.0,
                     ),
               ),
               Flexible(
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Text(
-                      valueOrDefault<String>(
+                      '${valueOrDefault<String>(
                         widget.question,
                         '0',
-                      ),
+                      )}',
                       style: TextStyle(
                         color: FlutterFlowTheme.of(context).primaryText,
                         fontWeight: FontWeight.bold,
@@ -110,18 +110,18 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                           builder: (alertDialogContext) {
                             return WebViewAware(
                               child: AlertDialog(
-                                content: const Text(
+                                content: Text(
                                     'Are You Sure You Want To Submit Answer ?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () => Navigator.pop(
                                         alertDialogContext, false),
-                                    child: const Text('Cancel'),
+                                    child: Text('Cancel'),
                                   ),
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext, true),
-                                    child: const Text('Confirm'),
+                                    child: Text('Confirm'),
                                   ),
                                 ],
                               ),
@@ -157,7 +157,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -188,7 +188,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
@@ -206,18 +206,18 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                           builder: (alertDialogContext) {
                             return WebViewAware(
                               child: AlertDialog(
-                                content: const Text(
+                                content: Text(
                                     'Are You Sure You Want To Submit Answer ?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () => Navigator.pop(
                                         alertDialogContext, false),
-                                    child: const Text('Cancel'),
+                                    child: Text('Cancel'),
                                   ),
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext, true),
-                                    child: const Text('Confirm'),
+                                    child: Text('Confirm'),
                                   ),
                                 ],
                               ),
@@ -253,7 +253,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -284,7 +284,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
@@ -302,18 +302,18 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                           builder: (alertDialogContext) {
                             return WebViewAware(
                               child: AlertDialog(
-                                content: const Text(
+                                content: Text(
                                     'Are You Sure You Want To Submit Answer ?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () => Navigator.pop(
                                         alertDialogContext, false),
-                                    child: const Text('Cancel'),
+                                    child: Text('Cancel'),
                                   ),
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext, true),
-                                    child: const Text('Confirm'),
+                                    child: Text('Confirm'),
                                   ),
                                 ],
                               ),
@@ -349,7 +349,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -380,7 +380,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
@@ -398,18 +398,18 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                           builder: (alertDialogContext) {
                             return WebViewAware(
                               child: AlertDialog(
-                                content: const Text(
+                                content: Text(
                                     'Are You Sure You Want To Submit Answer ?'),
                                 actions: [
                                   TextButton(
                                     onPressed: () => Navigator.pop(
                                         alertDialogContext, false),
-                                    child: const Text('Cancel'),
+                                    child: Text('Cancel'),
                                   ),
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext, true),
-                                    child: const Text('Confirm'),
+                                    child: Text('Confirm'),
                                   ),
                                 ],
                               ),
@@ -445,7 +445,7 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(6.0),
+                      padding: EdgeInsets.all(6.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -476,13 +476,13 @@ class _NewQuestionmockWidgetState extends State<NewQuestionmockWidget> {
                                   ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 10.0)),
+                        ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 20.0)),
+            ].divide(SizedBox(height: 20.0)),
           ),
         ),
       ),

@@ -12,7 +12,28 @@
           "package_name": "com.disha.elearning"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "171697159316-9hb485joqheqjmffmvpnadhp1regj0dg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.disha.elearning",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "171697159316-bkqbat20j9d0bhfda2qnjvuv4e1on2jq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.disha.elearning",
+            "certificate_hash": "c894a4707a4b55573792b24f9f682e976e236e98"
+          }
+        },
+        {
+          "client_id": "171697159316-emr0ainq66238gofcfiae5v0rtfn56jq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBA45yPd-TpveOUcCD06eXkG9-QymkQaU8"
@@ -21,6 +42,10 @@
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
+            {
+              "client_id": "171697159316-emr0ainq66238gofcfiae5v0rtfn56jq.apps.googleusercontent.com",
+              "client_type": 3
+            },
             {
               "client_id": "171697159316-tsultr65755oknjg19u1p0mhph086vab.apps.googleusercontent.com",
               "client_type": 2,

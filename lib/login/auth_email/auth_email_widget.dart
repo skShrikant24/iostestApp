@@ -64,15 +64,15 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 80.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 150.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.8, 0.8),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -91,8 +91,8 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -111,8 +111,8 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -146,15 +146,15 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 32.0),
+                      EdgeInsetsDirectional.fromSTEB(32.0, 12.0, 32.0, 32.0),
                   child: Container(
                     width: double.infinity,
                     height: 230.0,
                     decoration: BoxDecoration(
-                      color: const Color(0xFFF1F4F8),
+                      color: Color(0xFFF1F4F8),
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
@@ -167,28 +167,28 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 170.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 170.0, 0.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: Container(
                               width: double.infinity,
                               height: MediaQuery.sizeOf(context).width >= 768.0
                                   ? 530.0
                                   : 630.0,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 570.0,
                               ),
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
@@ -200,23 +200,23 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                 ],
                                 borderRadius: BorderRadius.circular(12.0),
                                 border: Border.all(
-                                  color: const Color(0xFFF1F4F8),
+                                  color: Color(0xFFF1F4F8),
                                   width: 2.0,
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Column(
                                   children: [
                                     Align(
-                                      alignment: const Alignment(0.0, 0),
+                                      alignment: Alignment(0.0, 0),
                                       child: TabBar(
                                         isScrollable: true,
-                                        labelColor: const Color(0xFF101213),
-                                        unselectedLabelColor: const Color(0xFF57636C),
+                                        labelColor: Color(0xFF101213),
+                                        unselectedLabelColor: Color(0xFF57636C),
                                         labelPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 32.0, 0.0, 32.0, 0.0),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
@@ -238,9 +238,9 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
-                                        indicatorColor: const Color(0xFF4B39EF),
+                                        indicatorColor: Color(0xFF4B39EF),
                                         indicatorWeight: 3.0,
-                                        tabs: const [
+                                        tabs: [
                                           Tab(
                                             text: 'Create Account',
                                           ),
@@ -260,9 +260,9 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 16.0, 24.0, 0.0),
                                               child: SingleChildScrollView(
@@ -281,7 +281,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                         width: 230.0,
                                                         height: 40.0,
                                                         decoration:
-                                                            const BoxDecoration(
+                                                            BoxDecoration(
                                                           color: Colors.white,
                                                         ),
                                                       ),
@@ -295,7 +295,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF101213),
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
@@ -305,7 +305,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -321,7 +321,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF57636C),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -334,13 +334,13 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   16.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -348,7 +348,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                           focusNode: _model
                                                               .emailAddressCreateFocusNode,
                                                           autofocus: true,
-                                                          autofillHints: const [
+                                                          autofillHints: [
                                                             AutofillHints.email
                                                           ],
                                                           obscureText: false,
@@ -362,7 +362,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF57636C),
                                                                       fontSize:
                                                                           16.0,
@@ -375,7 +375,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFE0E3E7),
                                                                 width: 2.0,
@@ -388,7 +388,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 width: 2.0,
@@ -401,7 +401,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             errorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 2.0,
@@ -414,7 +414,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 2.0,
@@ -428,7 +428,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             fillColor:
                                                                 Colors.white,
                                                             contentPadding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     24.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -437,7 +437,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
@@ -458,13 +458,13 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   16.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -472,7 +472,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                           focusNode: _model
                                                               .passwordCreateFocusNode,
                                                           autofocus: true,
-                                                          autofillHints: const [
+                                                          autofillHints: [
                                                             AutofillHints
                                                                 .password
                                                           ],
@@ -489,7 +489,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF57636C),
                                                                       fontSize:
                                                                           16.0,
@@ -502,7 +502,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFE0E3E7),
                                                                 width: 2.0,
@@ -515,7 +515,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 width: 2.0,
@@ -528,7 +528,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             errorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 2.0,
@@ -541,7 +541,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 2.0,
@@ -555,7 +555,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             fillColor:
                                                                 Colors.white,
                                                             contentPadding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     24.0),
                                                             suffixIcon: InkWell(
                                                               onTap: () =>
@@ -574,7 +574,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                         .visibility_outlined
                                                                     : Icons
                                                                         .visibility_off_outlined,
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF57636C),
                                                                 size: 24.0,
                                                               ),
@@ -586,7 +586,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
@@ -604,11 +604,11 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -616,24 +616,6 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     16.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
-                                                            GoRouter.of(context)
-                                                                .prepareAuthEvent();
-
-                                                            final user =
-                                                                await authManager
-                                                                    .createAccountWithEmail(
-                                                              context,
-                                                              _model
-                                                                  .emailAddressCreateTextController
-                                                                  .text,
-                                                              _model
-                                                                  .passwordCreateTextController
-                                                                  .text,
-                                                            );
-                                                            if (user == null) {
-                                                              return;
-                                                            }
-
                                                             _model.user =
                                                                 await queryUserPofileRecordOnce(
                                                               queryBuilder:
@@ -656,15 +638,8 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             safeSetState(() {});
                                                             if (_model.user !=
                                                                 null) {
-                                                              context.pushNamedAuth(
-                                                                  'HomePage',
-                                                                  context
-                                                                      .mounted);
-                                                            } else {
-                                                              context.pushNamedAuth(
-                                                                  'CreateUser',
-                                                                  context
-                                                                      .mounted);
+                                                              context.pushNamed(
+                                                                  'HomePage');
                                                             }
 
                                                             safeSetState(() {});
@@ -675,20 +650,20 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             width: 230.0,
                                                             height: 52.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF4B39EF),
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
@@ -709,7 +684,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -728,11 +703,11 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -749,7 +724,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF57636C),
                                                                     fontSize:
                                                                         14.0,
@@ -764,11 +739,11 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -795,7 +770,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                   Clip.none,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -839,10 +814,6 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                         context.pushNamedAuth(
                                                                             'HomePage',
                                                                             context.mounted);
-                                                                      } else {
-                                                                        context.pushNamedAuth(
-                                                                            'CreateUser',
-                                                                            context.mounted);
                                                                       }
 
                                                                       safeSetState(
@@ -851,7 +822,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     text:
                                                                         'Continue with Google',
                                                                     icon:
-                                                                        const FaIcon(
+                                                                        FaIcon(
                                                                       FontAwesomeIcons
                                                                           .google,
                                                                       size:
@@ -863,12 +834,12 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                           230.0,
                                                                       height:
                                                                           44.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -882,7 +853,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                             fontFamily:
                                                                                 'Plus Jakarta Sans',
                                                                             color:
-                                                                                const Color(0xFF101213),
+                                                                                Color(0xFF101213),
                                                                             fontSize:
                                                                                 14.0,
                                                                             letterSpacing:
@@ -893,7 +864,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                       elevation:
                                                                           0.0,
                                                                       borderSide:
-                                                                          const BorderSide(
+                                                                          BorderSide(
                                                                         color: Color(
                                                                             0xFFE0E3E7),
                                                                         width:
@@ -903,63 +874,11 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                           BorderRadius.circular(
                                                                               40.0),
                                                                       hoverColor:
-                                                                          const Color(
+                                                                          Color(
                                                                               0xFFF1F4F8),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                                if (false)
-                                                                  isAndroid
-                                                                      ? Container()
-                                                                      : Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              16.0),
-                                                                          child:
-                                                                              FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              GoRouter.of(context).prepareAuthEvent();
-                                                                              final user = await authManager.signInWithApple(context);
-                                                                              if (user == null) {
-                                                                                return;
-                                                                              }
-
-                                                                              context.goNamedAuth('SplashScreen2', context.mounted);
-                                                                            },
-                                                                            text:
-                                                                                'Continue with Apple',
-                                                                            icon:
-                                                                                const FaIcon(
-                                                                              FontAwesomeIcons.apple,
-                                                                              size: 20.0,
-                                                                            ),
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              width: 230.0,
-                                                                              height: 44.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: Colors.white,
-                                                                              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                    color: const Color(0xFF101213),
-                                                                                    fontSize: 14.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                  ),
-                                                                              elevation: 0.0,
-                                                                              borderSide: const BorderSide(
-                                                                                color: Color(0xFFE0E3E7),
-                                                                                width: 2.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(40.0),
-                                                                              hoverColor: const Color(0xFFF1F4F8),
-                                                                            ),
-                                                                          ),
-                                                                        ),
                                                               ],
                                                             ),
                                                           ),
@@ -974,9 +893,9 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 16.0, 24.0, 0.0),
                                               child: SingleChildScrollView(
@@ -995,7 +914,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                         width: 230.0,
                                                         height: 40.0,
                                                         decoration:
-                                                            const BoxDecoration(
+                                                            BoxDecoration(
                                                           color: Colors.white,
                                                         ),
                                                       ),
@@ -1009,7 +928,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF101213),
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
@@ -1019,7 +938,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -1035,7 +954,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF57636C),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -1048,13 +967,13 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   16.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -1062,7 +981,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                           focusNode: _model
                                                               .emailAddressFocusNode,
                                                           autofocus: true,
-                                                          autofillHints: const [
+                                                          autofillHints: [
                                                             AutofillHints.email
                                                           ],
                                                           obscureText: false,
@@ -1076,7 +995,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF57636C),
                                                                       fontSize:
                                                                           16.0,
@@ -1089,7 +1008,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFF1F4F8),
                                                                 width: 2.0,
@@ -1102,7 +1021,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 width: 2.0,
@@ -1115,7 +1034,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             errorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFE0E3E7),
                                                                 width: 2.0,
@@ -1128,7 +1047,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFE0E3E7),
                                                                 width: 2.0,
@@ -1142,7 +1061,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             fillColor:
                                                                 Colors.white,
                                                             contentPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         24.0,
@@ -1155,7 +1074,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
@@ -1176,13 +1095,13 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   16.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -1190,7 +1109,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                           focusNode: _model
                                                               .passwordFocusNode,
                                                           autofocus: true,
-                                                          autofillHints: const [
+                                                          autofillHints: [
                                                             AutofillHints
                                                                 .password
                                                           ],
@@ -1207,7 +1126,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF57636C),
                                                                       fontSize:
                                                                           16.0,
@@ -1220,7 +1139,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFE0E3E7),
                                                                 width: 2.0,
@@ -1233,7 +1152,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 width: 2.0,
@@ -1246,7 +1165,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             errorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 2.0,
@@ -1259,7 +1178,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFFF5963),
                                                                 width: 2.0,
@@ -1273,7 +1192,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             fillColor:
                                                                 Colors.white,
                                                             contentPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         24.0,
@@ -1296,7 +1215,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                         .visibility_outlined
                                                                     : Icons
                                                                         .visibility_off_outlined,
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF57636C),
                                                                 size: 24.0,
                                                               ),
@@ -1308,7 +1227,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF101213),
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
@@ -1326,11 +1245,11 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1383,11 +1302,6 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                   'HomePage',
                                                                   context
                                                                       .mounted);
-                                                            } else {
-                                                              context.pushNamedAuth(
-                                                                  'CreateUser',
-                                                                  context
-                                                                      .mounted);
                                                             }
 
                                                             safeSetState(() {});
@@ -1398,20 +1312,20 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                             width: 230.0,
                                                             height: 52.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF4B39EF),
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
@@ -1432,7 +1346,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -1447,11 +1361,11 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -1467,7 +1381,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF57636C),
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
@@ -1481,7 +1395,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Wrap(
                                                         spacing: 16.0,
@@ -1503,7 +1417,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1550,11 +1464,6 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                       'HomePage',
                                                                       context
                                                                           .mounted);
-                                                                } else {
-                                                                  context.pushNamedAuth(
-                                                                      'CreateUser',
-                                                                      context
-                                                                          .mounted);
                                                                 }
 
                                                                 safeSetState(
@@ -1562,7 +1471,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               },
                                                               text:
                                                                   'Continue with Google',
-                                                              icon: const FaIcon(
+                                                              icon: FaIcon(
                                                                 FontAwesomeIcons
                                                                     .google,
                                                                 size: 20.0,
@@ -1572,14 +1481,14 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                 width: 230.0,
                                                                 height: 44.0,
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
                                                                 iconPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1593,7 +1502,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF101213),
                                                                       fontSize:
                                                                           14.0,
@@ -1605,7 +1514,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     ),
                                                                 elevation: 0.0,
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0xFFE0E3E7),
                                                                   width: 2.0,
@@ -1614,100 +1523,21 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     BorderRadius
                                                                         .circular(
                                                                             40.0),
-                                                                hoverColor: const Color(
+                                                                hoverColor: Color(
                                                                     0xFFF1F4F8),
                                                               ),
                                                             ),
                                                           ),
-                                                          if (false)
-                                                            isAndroid
-                                                                ? Container()
-                                                                : Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            16.0),
-                                                                    child:
-                                                                        FFButtonWidget(
-                                                                      onPressed:
-                                                                          () async {
-                                                                        GoRouter.of(context)
-                                                                            .prepareAuthEvent();
-                                                                        final user =
-                                                                            await authManager.signInWithApple(context);
-                                                                        if (user ==
-                                                                            null) {
-                                                                          return;
-                                                                        }
-
-                                                                        context.goNamedAuth(
-                                                                            'SplashScreen2',
-                                                                            context.mounted);
-                                                                      },
-                                                                      text:
-                                                                          'Continue with Apple',
-                                                                      icon:
-                                                                          const FaIcon(
-                                                                        FontAwesomeIcons
-                                                                            .apple,
-                                                                        size:
-                                                                            20.0,
-                                                                      ),
-                                                                      options:
-                                                                          FFButtonOptions(
-                                                                        width:
-                                                                            230.0,
-                                                                        height:
-                                                                            44.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        color: Colors
-                                                                            .white,
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF101213),
-                                                                              fontSize: 14.0,
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                            ),
-                                                                        elevation:
-                                                                            0.0,
-                                                                        borderSide:
-                                                                            const BorderSide(
-                                                                          color:
-                                                                              Color(0xFFE0E3E7),
-                                                                          width:
-                                                                              2.0,
-                                                                        ),
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(40.0),
-                                                                        hoverColor:
-                                                                            const Color(0xFFF1F4F8),
-                                                                      ),
-                                                                    ),
-                                                                  ),
                                                         ],
                                                       ),
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1736,14 +1566,14 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                               FFButtonOptions(
                                                             height: 44.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         32.0,
                                                                         0.0,
                                                                         32.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1757,7 +1587,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF101213),
                                                                       fontSize:
                                                                           14.0,
@@ -1769,7 +1599,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                     ),
                                                             elevation: 0.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color:
                                                                   Colors.white,
                                                               width: 2.0,
@@ -1778,7 +1608,7 @@ class _AuthEmailWidgetState extends State<AuthEmailWidget>
                                                                 BorderRadius
                                                                     .circular(
                                                                         40.0),
-                                                            hoverColor: const Color(
+                                                            hoverColor: Color(
                                                                 0xFFF1F4F8),
                                                           ),
                                                         ),

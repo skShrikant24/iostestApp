@@ -95,7 +95,7 @@ class _VideoListProfessionalWidgetState
                     letterSpacing: 0.0,
                   ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -115,10 +115,10 @@ class _VideoListProfessionalWidgetState
                 ),
                 Flexible(
                   child: Container(
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
                       child: Builder(
                         builder: (context) {
                           final list2 = _model.listpage.toList();
@@ -137,7 +137,7 @@ class _VideoListProfessionalWidgetState
                             itemBuilder: (context, list2Index) {
                               final list2Item = list2[list2Index];
                               return Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 5.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -254,8 +254,8 @@ class _VideoListProfessionalWidgetState
                                           ),
                                         ),
                                       ]
-                                          .divide(const SizedBox(width: 10.0))
-                                          .addToStart(const SizedBox(width: 10.0)),
+                                          .divide(SizedBox(width: 10.0))
+                                          .addToStart(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ),

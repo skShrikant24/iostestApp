@@ -78,7 +78,7 @@ class _MockTestWidgetState extends State<MockTestWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -88,7 +88,7 @@ class _MockTestWidgetState extends State<MockTestWidget> {
             children: [
               Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: wrapWithModel(
                   model: _model.mocktestPLModel,
                   updateCallback: () => safeSetState(() {}),
@@ -98,7 +98,7 @@ class _MockTestWidgetState extends State<MockTestWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(-0.03, 0.89),
+                alignment: AlignmentDirectional(-0.03, 0.89),
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed('ResultPage');
@@ -107,9 +107,9 @@ class _MockTestWidgetState extends State<MockTestWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',

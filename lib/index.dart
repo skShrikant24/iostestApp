@@ -1,7 +1,6 @@
 // Export pages
 export '/welcome/splash_screen/splash_screen_widget.dart'
     show SplashScreenWidget;
-export '/welcome/login_page/login_page_widget.dart' show LoginPageWidget;
 export '/login/mobile_number_page/mobile_number_page_widget.dart'
     show MobileNumberPageWidget;
 export '/login/o_t_p_activity/o_t_p_activity_widget.dart'
@@ -21,7 +20,6 @@ export '/advance_courses_list/advance_courses_list_widget.dart'
 export '/home/practice_test/practice_test_widget.dart' show PracticeTestWidget;
 export '/home/abouts/abouts_widget.dart' show AboutsWidget;
 export '/feedback_page/feedback_page_widget.dart' show FeedbackPageWidget;
-export '/login/create_user/create_user_widget.dart' show CreateUserWidget;
 export '/professional/profession_login/profession_login_widget.dart'
     show ProfessionLoginWidget;
 export '/professional/p_l_homepage/p_l_homepage_widget.dart'
@@ -38,6 +36,9 @@ export '/professional/practice_testprofessional/practice_testprofessional_widget
 export '/professional/mock_test/mock_test_widget.dart' show MockTestWidget;
 export '/professional/result_page/result_page_widget.dart'
     show ResultPageWidget;
-export '/welcome/auth_email/auth_email_widget.dart' show AuthEmailWidget;
+export '/login/auth_email/auth_email_widget.dart' show AuthEmailWidget;
 export '/welcome/splash_screen2/splash_screen2_widget.dart'
     show SplashScreen2Widget;
+export '/login/create_account/create_account_widget.dart'
+    show CreateAccountWidget;
+export '/login/loginemail/loginemail_widget.dart' show LoginemailWidget;

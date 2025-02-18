@@ -53,7 +53,7 @@ class _Questionbank2CopyWidgetState extends State<Questionbank2CopyWidget> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -61,15 +61,15 @@ class _Questionbank2CopyWidgetState extends State<Questionbank2CopyWidget> {
             child: Stack(
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
                     child: Builder(
                       builder: (context) {
                         final list = FFAppState().listQuestion.toList();
 
-                        return SizedBox(
+                        return Container(
                           width: double.infinity,
                           height: MediaQuery.sizeOf(context).height * 0.9,
                           child: CarouselSlider.builder(
@@ -79,7 +79,7 @@ class _Questionbank2CopyWidgetState extends State<Questionbank2CopyWidget> {
                               return Container(
                                 width: 400.0,
                                 height: double.infinity,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   shape: BoxShape.rectangle,
                                 ),
                                 child: NewQuestionWidget(

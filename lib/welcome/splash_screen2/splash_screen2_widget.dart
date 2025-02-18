@@ -40,8 +40,6 @@ class _SplashScreen2WidgetState extends State<SplashScreen2Widget> {
       safeSetState(() {});
       if (_model.usercreate2 != null) {
         context.pushNamed('HomePage');
-      } else {
-        context.pushNamed('CreateUser');
       }
     });
 
@@ -103,7 +101,7 @@ class _SplashScreen2WidgetState extends State<SplashScreen2Widget> {
                 ],
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.84),
+                alignment: AlignmentDirectional(0.0, 0.84),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,

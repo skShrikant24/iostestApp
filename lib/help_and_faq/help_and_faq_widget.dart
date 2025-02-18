@@ -69,7 +69,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -87,13 +87,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFF6CDCD),
+                                color: Color(0xFFF6CDCD),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -101,7 +101,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -128,7 +128,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -147,7 +147,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -162,13 +162,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -176,7 +176,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -203,7 +203,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -222,7 +222,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -237,13 +237,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFB8C5DB),
+                                color: Color(0xFFB8C5DB),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -251,7 +251,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -281,7 +281,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                     ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -300,7 +300,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -315,13 +315,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFF6CDCD),
+                                color: Color(0xFFF6CDCD),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -329,7 +329,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -356,7 +356,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -375,7 +375,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -390,13 +390,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -404,7 +404,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -431,7 +431,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -450,7 +450,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -465,13 +465,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -479,7 +479,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -506,7 +506,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -525,7 +525,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -540,13 +540,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -554,7 +554,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -581,7 +581,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -600,7 +600,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -615,13 +615,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -629,7 +629,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -656,7 +656,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -675,7 +675,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -690,13 +690,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -704,7 +704,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -731,7 +731,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -750,7 +750,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],
@@ -765,13 +765,13 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 15.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -779,7 +779,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -806,7 +806,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -825,7 +825,7 @@ class _HelpAndFaqWidgetState extends State<HelpAndFaqWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ],

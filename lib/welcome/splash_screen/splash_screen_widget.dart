@@ -85,7 +85,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
                 ],
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.84),
+                alignment: AlignmentDirectional(0.0, 0.84),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,

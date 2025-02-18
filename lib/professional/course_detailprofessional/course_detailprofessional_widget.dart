@@ -59,7 +59,7 @@ class _CourseDetailprofessionalWidgetState
       child: Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
-          backgroundColor: const Color(0xFFF5F5F8),
+          backgroundColor: Color(0xFFF5F5F8),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -87,14 +87,14 @@ class _CourseDetailprofessionalWidgetState
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Container(
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -104,7 +104,7 @@ class _CourseDetailprofessionalWidgetState
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -116,8 +116,8 @@ class _CourseDetailprofessionalWidgetState
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 500),
-                                fadeOutDuration: const Duration(milliseconds: 500),
+                                fadeInDuration: Duration(milliseconds: 500),
+                                fadeOutDuration: Duration(milliseconds: 500),
                                 imageUrl: functions
                                     .imgStrtoimagePath(valueOrDefault<String>(
                                   widget.imageName,
@@ -138,12 +138,12 @@ class _CourseDetailprofessionalWidgetState
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 100.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -173,7 +173,7 @@ class _CourseDetailprofessionalWidgetState
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Chapters',
                           style:
@@ -192,13 +192,13 @@ class _CourseDetailprofessionalWidgetState
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 15.0, 10.0, 0.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 100.0,
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF6CDCD),
+                              color: Color(0xFFF6CDCD),
                               borderRadius: BorderRadius.circular(14.0),
                             ),
                             child: InkWell(
@@ -244,16 +244,16 @@ class _CourseDetailprofessionalWidgetState
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 0.0, 0.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: CachedNetworkImage(
                                             fadeInDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             fadeOutDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             imageUrl:
                                                 'https://picsum.photos/seed/233/600',
                                             width: 60.0,
@@ -280,7 +280,7 @@ class _CourseDetailprofessionalWidgetState
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 0.0, 0.0),
                                               child: Text(
                                                 'Video Chapters break up a video into section,each with an individual preview',
@@ -298,7 +298,7 @@ class _CourseDetailprofessionalWidgetState
                                           ],
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 10.0)),
+                                    ].divide(SizedBox(width: 10.0)),
                                   ),
                                 ],
                               ),
@@ -313,7 +313,7 @@ class _CourseDetailprofessionalWidgetState
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 15.0, 10.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -335,7 +335,7 @@ class _CourseDetailprofessionalWidgetState
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFAACBBE),
+                                color: Color(0xFFAACBBE),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -347,16 +347,16 @@ class _CourseDetailprofessionalWidgetState
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 0.0, 0.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: CachedNetworkImage(
                                             fadeInDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             fadeOutDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             imageUrl:
                                                 'https://picsum.photos/seed/233/600',
                                             width: 60.0,
@@ -383,7 +383,7 @@ class _CourseDetailprofessionalWidgetState
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 0.0, 0.0),
                                               child: Text(
                                                 'Video Chapters break up a video into section,each with an individual preview',
@@ -401,7 +401,7 @@ class _CourseDetailprofessionalWidgetState
                                           ],
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 10.0)),
+                                    ].divide(SizedBox(width: 10.0)),
                                   ),
                                 ],
                               ),
@@ -416,7 +416,7 @@ class _CourseDetailprofessionalWidgetState
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 15.0, 10.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -442,7 +442,7 @@ class _CourseDetailprofessionalWidgetState
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFB8C5DB),
+                                color: Color(0xFFB8C5DB),
                                 borderRadius: BorderRadius.circular(14.0),
                               ),
                               child: Column(
@@ -454,16 +454,16 @@ class _CourseDetailprofessionalWidgetState
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 0.0, 0.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: CachedNetworkImage(
                                             fadeInDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             fadeOutDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             imageUrl:
                                                 'https://picsum.photos/seed/233/600',
                                             width: 60.0,
@@ -490,7 +490,7 @@ class _CourseDetailprofessionalWidgetState
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 0.0, 0.0),
                                               child: Text(
                                                 'Video Chapters break up a video into section,each with an individual preview',
@@ -508,7 +508,7 @@ class _CourseDetailprofessionalWidgetState
                                           ],
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 10.0)),
+                                    ].divide(SizedBox(width: 10.0)),
                                   ),
                                 ],
                               ),

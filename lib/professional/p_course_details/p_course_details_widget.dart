@@ -81,7 +81,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
           child: Scaffold(
             key: scaffoldKey,
             appBar: AppBar(
-              backgroundColor: const Color(0xFFF5F5F8),
+              backgroundColor: Color(0xFFF5F5F8),
               automaticallyImplyLeading: false,
               leading: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -109,14 +109,14 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: SafeArea(
               top: true,
               child: Container(
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -126,7 +126,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -157,12 +157,12 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 100.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -191,7 +191,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Chapters',
@@ -212,13 +212,13 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 15.0, 10.0, 0.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 100.0,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFF6CDCD),
+                                  color: Color(0xFFF6CDCD),
                                   borderRadius: BorderRadius.circular(14.0),
                                 ),
                                 child: InkWell(
@@ -269,7 +269,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     15.0, 0.0, 0.0, 0.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -302,7 +302,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 5.0, 0.0, 0.0),
                                                   child: Text(
@@ -321,7 +321,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                               ],
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 10.0)),
+                                        ].divide(SizedBox(width: 10.0)),
                                       ),
                                     ],
                                   ),
@@ -336,7 +336,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 15.0, 10.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -358,7 +358,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 100.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFFAACBBE),
+                                    color: Color(0xFFAACBBE),
                                     borderRadius: BorderRadius.circular(14.0),
                                   ),
                                   child: Column(
@@ -372,7 +372,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     15.0, 0.0, 0.0, 0.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -405,7 +405,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 5.0, 0.0, 0.0),
                                                   child: Text(
@@ -424,7 +424,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                               ],
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 10.0)),
+                                        ].divide(SizedBox(width: 10.0)),
                                       ),
                                     ],
                                   ),
@@ -439,13 +439,13 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 15.0, 10.0, 0.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 100.0,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFB8C5DB),
+                                  color: Color(0xFFB8C5DB),
                                   borderRadius: BorderRadius.circular(14.0),
                                 ),
                                 child: Column(
@@ -459,7 +459,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   15.0, 0.0, 0.0, 0.0),
                                           child: ClipRRect(
                                             borderRadius:
@@ -492,7 +492,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                                         ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -511,7 +511,7 @@ class _PCourseDetailsWidgetState extends State<PCourseDetailsWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ],
                                 ),

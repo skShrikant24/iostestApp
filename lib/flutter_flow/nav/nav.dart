@@ -77,35 +77,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const SplashScreen2Widget()
-          : const SplashScreenWidget(),
+          ? SplashScreen2Widget()
+          : LoginemailWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const SplashScreen2Widget()
-              : const SplashScreenWidget(),
+              ? SplashScreen2Widget()
+              : LoginemailWidget(),
         ),
         FFRoute(
           name: 'SplashScreen',
           path: '/splashScreen',
-          builder: (context, params) => const SplashScreenWidget(),
-        ),
-        FFRoute(
-          name: 'LoginPage',
-          path: '/loginPage',
-          builder: (context, params) => const LoginPageWidget(),
+          builder: (context, params) => SplashScreenWidget(),
         ),
         FFRoute(
           name: 'MobileNumberPage',
           path: '/mobileNumberPage',
-          builder: (context, params) => const MobileNumberPageWidget(),
+          builder: (context, params) => MobileNumberPageWidget(),
         ),
         FFRoute(
           name: 'OTPActivity',
           path: '/oTPActivity',
-          builder: (context, params) => const OTPActivityWidget(),
+          builder: (context, params) => OTPActivityWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -161,22 +156,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'TestApi',
           path: '/testApi',
-          builder: (context, params) => const TestApiWidget(),
+          builder: (context, params) => TestApiWidget(),
         ),
         FFRoute(
           name: 'HelpAndFaq',
           path: '/helpAndFaq',
-          builder: (context, params) => const HelpAndFaqWidget(),
+          builder: (context, params) => HelpAndFaqWidget(),
         ),
         FFRoute(
           name: 'PrivacyPolicy',
           path: '/privacyPolicy',
-          builder: (context, params) => const PrivacyPolicyWidget(),
+          builder: (context, params) => PrivacyPolicyWidget(),
         ),
         FFRoute(
           name: 'AdvanceCoursesList',
           path: '/advanceCoursesList',
-          builder: (context, params) => const AdvanceCoursesListWidget(),
+          builder: (context, params) => AdvanceCoursesListWidget(),
         ),
         FFRoute(
           name: 'PracticeTest',
@@ -201,17 +196,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'FeedbackPage',
           path: '/feedbackPage',
-          builder: (context, params) => const FeedbackPageWidget(),
-        ),
-        FFRoute(
-          name: 'CreateUser',
-          path: '/createUser',
-          builder: (context, params) => const CreateUserWidget(),
+          builder: (context, params) => FeedbackPageWidget(),
         ),
         FFRoute(
           name: 'ProfessionLogin',
           path: '/professionLogin',
-          builder: (context, params) => const ProfessionLoginWidget(),
+          builder: (context, params) => ProfessionLoginWidget(),
         ),
         FFRoute(
           name: 'PLHomepage',
@@ -240,7 +230,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'loader',
           path: '/loader',
-          builder: (context, params) => const LoaderWidget(),
+          builder: (context, params) => LoaderWidget(),
         ),
         FFRoute(
           name: 'CourseDetailprofessional',
@@ -301,17 +291,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ResultPage',
           path: '/resultPage',
-          builder: (context, params) => const ResultPageWidget(),
+          builder: (context, params) => ResultPageWidget(),
         ),
         FFRoute(
           name: 'AuthEmail',
           path: '/authEmail',
-          builder: (context, params) => const AuthEmailWidget(),
+          builder: (context, params) => AuthEmailWidget(),
         ),
         FFRoute(
           name: 'SplashScreen2',
           path: '/splashScreen2',
-          builder: (context, params) => const SplashScreen2Widget(),
+          builder: (context, params) => SplashScreen2Widget(),
+        ),
+        FFRoute(
+          name: 'CreateAccount',
+          path: '/createAccount',
+          builder: (context, params) => CreateAccountWidget(),
+        ),
+        FFRoute(
+          name: 'Loginemail',
+          path: '/loginemail',
+          builder: (context, params) => LoginemailWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -485,7 +485,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/splashScreen';
+            return '/loginemail';
           }
           return null;
         },
@@ -552,7 +552,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

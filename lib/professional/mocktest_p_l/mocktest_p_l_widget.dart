@@ -49,7 +49,7 @@ class _MocktestPLWidgetState extends State<MocktestPLWidget> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -57,15 +57,15 @@ class _MocktestPLWidgetState extends State<MocktestPLWidget> {
             child: Stack(
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
                     child: Builder(
                       builder: (context) {
                         final list = FFAppState().mocktestlist.toList();
 
-                        return SizedBox(
+                        return Container(
                           width: double.infinity,
                           height: MediaQuery.sizeOf(context).height * 0.9,
                           child: CarouselSlider.builder(
@@ -75,7 +75,7 @@ class _MocktestPLWidgetState extends State<MocktestPLWidget> {
                               return Container(
                                 width: 400.0,
                                 height: double.infinity,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   shape: BoxShape.rectangle,
                                 ),
                                 child: NewQuestionmockWidget(

@@ -1,4 +1,4 @@
-name: test_application
+name: disha_elearning
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.13+14
+version: 1.0.18+19
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -36,9 +36,8 @@ dependencies:
   cloud_firestore: 5.5.0
   cloud_firestore_platform_interface: 6.5.0
   cloud_firestore_web: 4.3.4
-  collection: 1.18.0
+  collection: 1.19.0
   device_info_plus: ^10.1.2
-  easy_debounce: 2.0.1
   equatable: 2.0.5
   firebase_auth: 5.3.3
   firebase_auth_platform_interface: 7.4.9
