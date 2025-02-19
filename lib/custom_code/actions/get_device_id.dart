@@ -39,6 +39,15 @@ Future<String?> getDeviceId(String target) async {
       FFAppState().dId = build.deviceId;
 
       return FFAppState().dId;
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+      final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
+
+      //deviceData = _readAndroidBuildData(await deviceInfoPlugin.androidInfo);
+      var build = await deviceInfoPlugin.iosInfo;
+      var information = await ClientInformation.fetch();
+      FFAppState().dId = information.deviceId;
+
+      return FFAppState().dId;
     }
   } else {
     final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();

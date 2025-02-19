@@ -112,6 +112,26 @@ class _ProfessionLoginWidgetState extends State<ProfessionLoginWidget>
           ),
         ],
       ),
+      'textOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 150.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 150.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 150.0.ms,
+            duration: 400.0.ms,
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'columnOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -158,7 +178,7 @@ class _ProfessionLoginWidgetState extends State<ProfessionLoginWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation3': AnimationInfo(
+      'textOnPageLoadAnimation4': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 100.ms),
@@ -178,7 +198,7 @@ class _ProfessionLoginWidgetState extends State<ProfessionLoginWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation4': AnimationInfo(
+      'textOnPageLoadAnimation5': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 150.ms),
@@ -339,6 +359,23 @@ class _ProfessionLoginWidgetState extends State<ProfessionLoginWidget>
                                   ),
                             ).animateOnPageLoad(
                                 animationsMap['textOnPageLoadAnimation2']!),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 0.0),
+                            child: Text(
+                              'Device Id:${FFAppState().dId}',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Color(0xFF57636C),
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ).animateOnPageLoad(
+                                animationsMap['textOnPageLoadAnimation3']!),
                           ),
                         ],
                       ),
@@ -813,7 +850,7 @@ class _ProfessionLoginWidgetState extends State<ProfessionLoginWidget>
                                       fontWeight: FontWeight.bold,
                                     ),
                               ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation3']!),
+                                  animationsMap['textOnPageLoadAnimation4']!),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -830,7 +867,7 @@ class _ProfessionLoginWidgetState extends State<ProfessionLoginWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                               ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation4']!),
+                                  animationsMap['textOnPageLoadAnimation5']!),
                             ),
                           ],
                         ),
