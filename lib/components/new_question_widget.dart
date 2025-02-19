@@ -89,7 +89,7 @@ class _NewQuestionWidgetState extends State<NewQuestionWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Text(
-                      '${widget.index} ) ${valueOrDefault<String>(
+                      '${valueOrDefault<String>(
                         widget.question,
                         '0',
                       )}',
